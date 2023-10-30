@@ -1,0 +1,38 @@
+$color-body: #6de3f3;
+$color-main: #3994ee;
+$color-btn-background: #094988;
+$color-btn-border: #021f3d;
+$color-btn-font: #5ff36b;
+
+@import "./components/layout/mainpage";
+@import "./components/layout/user";
+
+// elementos para expand
+.flexBoxColumn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// css de la web
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  @extend .flexBoxColumn;
+  background: $color-body;
+  width: 100vw;
+}
+
+.mainPage {
+  @extend .flexBoxColumn;
+  background: $color-main;
+  padding-top: 2vh;
+  margin-top: 5vw;
+  width: 80%;
+  height: auto;
+}
