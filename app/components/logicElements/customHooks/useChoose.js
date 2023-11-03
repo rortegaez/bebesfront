@@ -1,9 +1,11 @@
+import { useDetailsContext } from '@/app/context/context';
 import {useState, useEffect} from 'react'
 
 export const useChoose =() =>{
 
 	const [name, setName] = useState(""); // aquí guardamos el nombre que queremos buscar
   const [listUser, setListUser] = useState([]); // guardamos la lista de los usuarios en base de datosos el user el cual debemos de hacer el getById
+	const {setDataUser} = useDetailsContext() // traemos los elementos del context
 
 	 // hacemos un get sobre user, para obtener todos los user y para después hacer una busqueda por nombre
 	const getDataUser = async () => {
@@ -12,12 +14,20 @@ export const useChoose =() =>{
 		setListUser(data)
 	}
 
+	// hacemos el cambio en el useState del context, para pasar los datos a DetailsUser
+	const pushDate = (data) => {
+		setDataUser(data)
+	}
+
 	// hacemos getById, para tener todos los datos de un user, se crea el condicional, por si el user no existe, no se puede buscar, ya que si lo buscamos, reventamos el backend
   const getDataFind = async (user) => {
-		console.log(user, "userFind");
+		try {
       const raw = await fetch(`http://localhost:3000/user/${user._id}`);
       const data = await raw.json();
-      data.Babys.map((item) => console.log(item));
+			return pushDate(data)
+		} catch (error) {
+			console.error('Error obtener datos', error)
+		}
   };
 
 	// hacemos find, para encontrar user dentro de listUser y añadimos los encontrado al useState
@@ -31,10 +41,9 @@ export const useChoose =() =>{
 		}
   };
 
-	// obtenemos la lista de user nada más renderizar el elemento
 	useEffect(() => {
-    getDataUser();
-  }, []);
+		getDataUser()
+	},[])
 
 	return{
 		findUser,

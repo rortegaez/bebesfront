@@ -1,4 +1,5 @@
 // css aplicado en el main.scss
+import { DetailsContextProvider } from './context/context'
 import './globals.css'
 
 export const metadata = {
@@ -9,7 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='main'>{children}</body>
+      <DetailsContextProvider>
+        <body className='main'>{children}</body>
+      </DetailsContextProvider>
     </html>
   )
 }

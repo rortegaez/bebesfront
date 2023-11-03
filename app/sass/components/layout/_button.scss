@@ -1,0 +1,40 @@
+.boxUser {
+  @extend .flexBoxColumn;
+  .btn-choose {
+    @extend .flexBoxColumn;
+    background: $color-btn-background;
+    color: $color-btn-font;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    width: 25vw;
+    margin: 2vh;
+    border-radius: 20px;
+    border: 10px solid $color-btn-border;
+  }
+}
+
+.boxChooseUser {
+  .boxChooseName {
+    @extend .flexBoxColumn;
+    background: $color-btn-background;
+    color: $color-btn-font;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    width: 25vw;
+    margin: 2vh;
+    border-radius: 20px;
+    border: 10px solid $color-btn-border;
+    gap: 1.5vh;
+    .titleChoose {
+      font-weight: bold;
+    }
+    .name {
+      border-radius: 5px;
+      width: 80%;
+      height: 3vh;
+    }
+    .btn {
+      @extend .btn-all;
+    }
+  }
+}

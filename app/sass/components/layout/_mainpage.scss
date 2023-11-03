@@ -1,18 +1,36 @@
 .boxMainPage {
   @extend .flexBoxColumn;
-  flex-wrap: wrap;
-  width: 100%;
+  background: $color-main;
+  padding-top: 2vh;
+  width: 80%;
   height: auto;
-  .create {
-    visibility: hidden;
-    &.make {
-      visibility: visible;
+  .boxButton {
+    @extend .flexBoxColumn;
+    background: $color-bg-layout;
+    border: 10px solid $color-btn-border-secundary;
+    margin-top: 5vh;
+    flex-wrap: wrap;
+    width: 90%;
+    height: auto;
+    .create {
+      display: none;
+      &.make {
+        display: contents;
+      }
+    }
+    .choose {
+      display: none;
+      &.options {
+        display: contents;
+      }
     }
   }
-  .choose {
-    visibility: hidden;
-    &.options {
-      visibility: visible;
-    }
+  .boxDetails {
+    @extend .flexBoxColumn;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    width: 90%;
+    background: $color-bg-layout;
+    border: 10px solid $color-btn-border-secundary;
   }
 }

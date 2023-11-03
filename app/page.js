@@ -5,8 +5,9 @@ import './globals.css'
 
 export default function Home() {
   return (
-    <main className='mainPage'>
-      <MainPage />
-    </main>
+
+      <main className='mainPage'>
+        <MainPage />
+      </main>
   )
 }

@@ -1,17 +1,31 @@
 .boxMainPage {
-  flex-wrap: wrap;
-  width: 100%;
+  background: #3994ee;
+  padding-top: 2vh;
+  width: 80%;
   height: auto; }
-  .boxMainPage .create {
-    visibility: hidden; }
-    .boxMainPage .create.make {
-      visibility: visible; }
-  .boxMainPage .choose {
-    visibility: hidden; }
-    .boxMainPage .choose.options {
-      visibility: visible; }
+  .boxMainPage .boxButton {
+    background: #3131f0;
+    border: 10px solid #2b4b6d;
+    margin-top: 5vh;
+    flex-wrap: wrap;
+    width: 90%;
+    height: auto; }
+    .boxMainPage .boxButton .create {
+      display: none; }
+      .boxMainPage .boxButton .create.make {
+        display: contents; }
+    .boxMainPage .boxButton .choose {
+      display: none; }
+      .boxMainPage .boxButton .choose.options {
+        display: contents; }
+  .boxMainPage .boxDetails {
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    width: 90%;
+    background: #3131f0;
+    border: 10px solid #2b4b6d; }
 
-.user {
+.boxUser .btn-choose {
   background: #094988;
   color: #5ff36b;
   padding-top: 1vw;
@@ -21,12 +35,39 @@
   border-radius: 20px;
   border: 10px solid #021f3d; }
 
-.flexBoxColumn, .boxMainPage, .boxUser, .user, .main, .mainPage {
+.boxChooseUser .boxChooseName {
+  background: #094988;
+  color: #5ff36b;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  width: 25vw;
+  margin: 2vh;
+  border-radius: 20px;
+  border: 10px solid #021f3d;
+  gap: 1.5vh; }
+  .boxChooseUser .boxChooseName .titleChoose {
+    font-weight: bold; }
+  .boxChooseUser .boxChooseName .name {
+    border-radius: 5px;
+    width: 80%;
+    height: 3vh; }
+
+.flexBoxColumn, .boxMainPage, .boxMainPage .boxButton, .boxMainPage .boxDetails, .boxUser, .boxUser .btn-choose, .boxChooseUser .boxChooseName, .main, .mainPage {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  border-radius: 5px; }
+
+.btn-all, .boxChooseUser .boxChooseName .btn {
+  width: 40%;
+  height: 4vh;
+  border-radius: 5px;
+  font-weight: bold;
+  background: #094988;
+  color: #5ff36b;
+  border: 3px solid #021f3d; }
 
 body {
   padding: 0;
@@ -37,7 +78,6 @@ body {
   width: 100vw; }
 
 .mainPage {
-  background: #3994ee;
   padding-top: 2vh;
   margin-top: 5vw;
   width: 80%;
