@@ -6,7 +6,7 @@ import "../../globals.css";
 
 export function DetailsUser() {
   const [dataLoaded, setDataLoader] = useState(false);
-  const { dataUser } = useDetailsContext();
+  const { dataUser, exists } = useDetailsContext();
 
   useEffect(() => {
     console.log(dataUser, "Cambio de dataUser");
@@ -16,13 +16,25 @@ export function DetailsUser() {
     }
   }, [dataUser]);
 
+  if (!exists) {
+    return <div>Este usuario no existe</div>;
+  }
   if (!dataLoaded) {
     return <div>Cargando datos...</div>;
   }
 
   return (
     <div className="boxDetails">
-      <h1>DetailsUser</h1>
+      <section className="boxCardBabys">
+        {dataUser.Babys.map((item, index) => (
+          <div className="cardBaby" key={index}>
+            <p>Nombre: {item.name}</p>
+            <p>Peso: {item.Weight}gr</p>
+            <p>Altura: {item.Tall}cm</p>
+            <p>Nacimiento: {item.Birthday}</p>
+          </div>
+        ))}
+      </section>
     </div>
   );
 }

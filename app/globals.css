@@ -7,6 +7,7 @@
     background: #3131f0;
     border: 10px solid #2b4b6d;
     margin-top: 5vh;
+    margin-bottom: 5vh;
     flex-wrap: wrap;
     width: 90%;
     height: auto; }
@@ -24,6 +25,19 @@
     width: 90%;
     background: #3131f0;
     border: 10px solid #2b4b6d; }
+    .boxMainPage .boxDetails .boxCardBabys {
+      padding-top: 3vh;
+      padding-bottom: 3vh; }
+      .boxMainPage .boxDetails .boxCardBabys .cardBaby {
+        box-sizing: border-box;
+        background: #6de3f3;
+        border-radius: 10px;
+        padding: 1vh 3vh 1vh 3vh;
+        margin: 1vh;
+        border: 5px solid #2b4b6d; }
+        .boxMainPage .boxDetails .boxCardBabys .cardBaby p {
+          font-weight: bold;
+          font-size: 2vh; }
 
 .boxUser .btn-choose {
   background: #094988;

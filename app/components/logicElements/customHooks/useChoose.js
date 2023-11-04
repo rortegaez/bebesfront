@@ -5,7 +5,7 @@ export const useChoose =() =>{
 
 	const [name, setName] = useState(""); // aquí guardamos el nombre que queremos buscar
   const [listUser, setListUser] = useState([]); // guardamos la lista de los usuarios en base de datosos el user el cual debemos de hacer el getById
-	const {setDataUser} = useDetailsContext() // traemos los elementos del context
+	const {setDataUser, setExists} = useDetailsContext() // traemos los elementos del context
 
 	 // hacemos un get sobre user, para obtener todos los user y para después hacer una busqueda por nombre
 	const getDataUser = async () => {
@@ -17,6 +17,7 @@ export const useChoose =() =>{
 	// hacemos el cambio en el useState del context, para pasar los datos a DetailsUser
 	const pushDate = (data) => {
 		setDataUser(data)
+		setExists(true)
 	}
 
 	// hacemos getById, para tener todos los datos de un user, se crea el condicional, por si el user no existe, no se puede buscar, ya que si lo buscamos, reventamos el backend
@@ -37,7 +38,7 @@ export const useChoose =() =>{
 		if(result){
 			return getDataFind(result)
 		} else {
-			return
+			return setExists(false)
 		}
   };
 

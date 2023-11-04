@@ -9,6 +9,7 @@
     background: $color-bg-layout;
     border: 10px solid $color-btn-border-secundary;
     margin-top: 5vh;
+    margin-bottom: 5vh;
     flex-wrap: wrap;
     width: 90%;
     height: auto;
@@ -32,5 +33,21 @@
     width: 90%;
     background: $color-bg-layout;
     border: 10px solid $color-btn-border-secundary;
+    .boxCardBabys {
+      padding-top: 3vh;
+      padding-bottom: 3vh;
+      .cardBaby {
+        box-sizing: border-box;
+        background: $color-body;
+        border-radius: 10px;
+        padding: 1vh 3vh 1vh 3vh;
+        margin: 1vh;
+        border: 5px solid $color-btn-border-secundary;
+        p {
+          font-weight: bold;
+          font-size: 2vh;
+        }
+      }
+    }
   }
 }

@@ -5,15 +5,16 @@ import { useChoose } from "../logicElements/customHooks/useChoose";
 
 import "../../globals.css";
 
-export function ChooseUser({ toggleIsOpen }) {
+export function ChooseUser({ toggleIsOpen, lockState }) {
   const { findUser, setName, name } = useChoose();
 
   // en esta función es donde damos funcionalidad al form, (event) es que se le pasara el evento a la función y .preventDefault() evita que la página se recarge
   // cuando ejecutamos el forms, buscamos el user y los datos del user que queremos ver
   const handleSubmit = (event) => {
     event.preventDefault();
-    findUser(name);
-    toggleIsOpen();
+    findUser(name); // para buscar el user
+    toggleIsOpen(); // para renderizar DetailsUser
+    lockState(); // para bloquear DetailsUser
   };
 
   return (
